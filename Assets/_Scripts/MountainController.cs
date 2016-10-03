@@ -48,7 +48,7 @@ public class MountainController : MonoBehaviour {
 
 	//Method check game object meets right-border
 	void _checkBoundary(){
-		if (this._transform.position.x <= -300f) {
+		if (this._transform.position.x <= -295f) {
 			this._reset (); 
 		}
 	}
@@ -56,6 +56,6 @@ public class MountainController : MonoBehaviour {
 	//Method resets the game object to original position
 	void _reset(){
 		//this will shift the object back
-		this._transform.position = new Vector2 (300f, 0f); 
+		this._transform.position = new Vector2 (296f, 0f); 
 	}
 }

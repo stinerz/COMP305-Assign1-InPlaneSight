@@ -2,6 +2,9 @@
 using System.Collections;
 
 public class PlayerBehaviour : MonoBehaviour {
+	//PRIVATE INSTANCE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	//private Transform _transform; 
+	private Vector2 _position; 
 	// Movement modifier applied to directional movement.
 	public float playerSpeed = 10.0f;
 	// What the current speed of our player is
@@ -10,22 +13,23 @@ public class PlayerBehaviour : MonoBehaviour {
 	private Vector3 lastMovement = new Vector3();
 
 
-	public Camera mainCamera;
+	//public Camera mainCamera;
+	public GameController gameController; 
 
 	// Use this for initialization
 	void Start () {
-
+		//this._transform = this.GetComponent<Transform> ();
 	}
 
 	// Update is called once per frame
 	void Update () {
 		// Move the player's body
-		Movement();
+		this._Movement();
 
 	}
 		
 	// Will move the player based off of keys pressed
-	void Movement()
+	private void _Movement()
 	{
 		// The movement that needs to occur this frame
 		Vector3 movement = new Vector3();
@@ -44,8 +48,6 @@ public class PlayerBehaviour : MonoBehaviour {
 			currentSpeed = playerSpeed;
 			this.transform.Translate(movement * Time.deltaTime * playerSpeed, Space.World);
 			lastMovement = movement;
-
-			mainCamera.transform.Translate (movement * Time.deltaTime * playerSpeed, Space.World);
 		}
 		else
 		{
@@ -53,11 +55,24 @@ public class PlayerBehaviour : MonoBehaviour {
 			this.transform.Translate(lastMovement * Time.deltaTime *
 				currentSpeed, Space.World);
 
-			mainCamera.transform.Translate(lastMovement * Time.deltaTime *currentSpeed, Space.World);
-
 			// Slow down over time
 			//currentSpeed *= 3f;
 		}
+	}
+
+	private void OnTriggerEnter2D(Collider2D other) {
+
+		if (other.gameObject.CompareTag ("Coin")) {
+			//this.yaySound.Play ();
+			this.gameController.ScoreValue += 10;
+			 
+		}		
+
+		if (other.gameObject.CompareTag ("Bird")) {
+			//this.thunderSound.Play ();
+			this.gameController.LivesValue -= 1;
+		}
+
 	}
 
 }
