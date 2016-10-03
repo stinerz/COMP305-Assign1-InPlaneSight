@@ -52,6 +52,5 @@ public class CoinController : MonoBehaviour {
 	private void _reset() {
 		this._speed = 5;
 		this._transform.position = new Vector2 (350f, Random.Range(-190f, 190f)); 
-		transform.position = _newPosition; 
 	}
 }

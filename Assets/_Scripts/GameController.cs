@@ -93,9 +93,9 @@ public class GameController : MonoBehaviour {
 		this.coin.SetActive (false); 
 	}
 
+	//loads scene when click on restart button 
 	public void RestartGameButton_Click() {
-		
-		SceneManager.LoadScene ("Game");
+		SceneManager.LoadScene ("Main");
 	}
 }
 

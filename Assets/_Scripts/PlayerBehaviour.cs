@@ -13,8 +13,10 @@ public class PlayerBehaviour : MonoBehaviour {
 	private Vector3 lastMovement = new Vector3();
 
 
-	//public Camera mainCamera;
+	//PUBLIC INSTANCE VARIABLES 
 	public GameController gameController; 
+	public AudioSource Pickup_Coin3; 
+	public AudioSource Hit_Hurt8; 
 
 	// Use this for initialization
 	void Start () {
@@ -63,13 +65,13 @@ public class PlayerBehaviour : MonoBehaviour {
 	private void OnTriggerEnter2D(Collider2D other) {
 
 		if (other.gameObject.CompareTag ("Coin")) {
-			//this.yaySound.Play ();
+			this.Pickup_Coin3.Play ();
 			this.gameController.ScoreValue += 10;
 			 
 		}		
 
 		if (other.gameObject.CompareTag ("Bird")) {
-			//this.thunderSound.Play ();
+			this.Hit_Hurt8.Play ();
 			this.gameController.LivesValue -= 1;
 		}
 

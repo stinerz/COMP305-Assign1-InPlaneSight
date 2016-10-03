@@ -48,6 +48,7 @@
      <Compile Include="Assets\_Scripts\BirdController.cs" />
      <Compile Include="Assets\_Scripts\CoinController.cs" />
      <Compile Include="Assets\_Scripts\GameController.cs" />
+     <Compile Include="Assets\_Scripts\MenuController.cs" />
      <Compile Include="Assets\_Scripts\MountainController.cs" />
      <Compile Include="Assets\_Scripts\PlayerBehaviour.cs" />
  <Reference Include="UnityEngine.Networking">
