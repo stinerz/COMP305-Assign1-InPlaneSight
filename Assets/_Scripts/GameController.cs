@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿/*In Plane Sight By Christina Kuo - 300721385
+Game Controller class manage scene and controls what happens when the game is over
+Last modified 10/02/2016 */
+
+using UnityEngine;
 using System.Collections;
 
 //used for ref to UI elements 

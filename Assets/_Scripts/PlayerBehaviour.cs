@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿/*In Plane Sight By Christina Kuo - 300721385
+Player behaviour class controls the players speed and movement.
+Last modified 10/03/2016 */
+
+using UnityEngine;
 using System.Collections;
 
 public class PlayerBehaviour : MonoBehaviour {

@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿/*In Plane Sight By Christina Kuo - 300721385
+Bird Controller class controls Bird Prefab 
+Last modified 10/01/2016 */
+using UnityEngine;
 using System.Collections;
 
 public class BirdController : MonoBehaviour {

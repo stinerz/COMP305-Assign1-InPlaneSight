@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿/*In Plane Sight By Christina Kuo - 300721385
+Mountain Controller class controls scrollng mountain background  
+Last modified 09/26/2016 */
+
+using UnityEngine;
 using System.Collections;
 
 public class MountainController : MonoBehaviour {

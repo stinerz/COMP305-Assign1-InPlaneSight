@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿/*In Plane Sight By Christina Kuo - 300721385
+Coin Controller class controls sprite coin  
+Last modified 10/02/2016 */
+
+using UnityEngine;
 using System.Collections;
 
 public class CoinController : MonoBehaviour {
@@ -7,7 +11,7 @@ public class CoinController : MonoBehaviour {
 	private Transform _transform;
 	private Vector2 _newPosition; 
 
-	// PUBLIC PROPERTIES
+	// PUBLIC PROPERTIES Get and Set +++++++++++++++++++++++++++++
 	public int Speed {
 		get {
 			return this._speed;
@@ -17,22 +21,19 @@ public class CoinController : MonoBehaviour {
 		}
 	}
 
-
-	// Use this for initialization
+	// Use this for initialization +++++++++++++++++++++++++++++
 	void Start () {
 		this._transform = this.GetComponent<Transform> ();
 		this._reset ();
 	}
 
-	// Update is called once per frame
+	// Update is called once per frame +++++++++++++++++++++++++++++
 	void Update () {
 		this._move ();
 		this._checkBoundary ();
 	}
 
-	/**
-	 * this method moves the game object down the screen by _speed px every frame
-	 */
+	// Method moves the game object down the screen by _speed px every frame +++++++++++++++++++++++++++++
 	private void _move() {
 		this._newPosition = this._transform.position;
 
@@ -48,7 +49,7 @@ public class CoinController : MonoBehaviour {
 		}
 	}
 
-	//resets the game object to the original position
+	//resets the game object to the original position +++++++++++++++++++++++++++++
 	private void _reset() {
 		this._speed = 5;
 		this._transform.position = new Vector2 (350f, Random.Range(-190f, 190f)); 
