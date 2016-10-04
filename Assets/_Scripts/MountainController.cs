@@ -8,6 +8,7 @@ public class MountainController : MonoBehaviour {
 	private Transform _transform; 
 	private Vector2 _position; 
 
+	//Get and Set
 	public int Speed{
 		get{
 			return this._speed;

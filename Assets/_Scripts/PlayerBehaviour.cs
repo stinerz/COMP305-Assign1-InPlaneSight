@@ -13,24 +13,23 @@ public class PlayerBehaviour : MonoBehaviour {
 	private Vector3 lastMovement = new Vector3();
 
 
-	//PUBLIC INSTANCE VARIABLES 
+	//PUBLIC INSTANCE VARIABLES  +++++++++++++++++++++++++++++
 	public GameController gameController; 
 	public AudioSource Pickup_Coin3; 
 	public AudioSource Hit_Hurt8; 
 
 	// Use this for initialization
 	void Start () {
-		//this._transform = this.GetComponent<Transform> ();
 	}
 
-	// Update is called once per frame
+	// Update is called once per frame +++++++++++++++++++++++++++++
 	void Update () {
 		// Move the player's body
 		this._Movement();
 
 	}
 		
-	// Will move the player based off of keys pressed
+	// Player will play based off keys pressed +++++++++++++++++++++++++++++
 	private void _Movement()
 	{
 		// The movement that needs to occur this frame
@@ -38,11 +37,8 @@ public class PlayerBehaviour : MonoBehaviour {
 		// Check for input
 		movement.x += Input.GetAxis ("Horizontal");
 		movement.y += Input.GetAxis ("Vertical");
-		/*
-		* If we pressed multiple buttons, make sure we're only
-		* moving the same length.
-		*/
-		movement.Normalize ();
+		movement.Normalize (); //Ensure direction is moving the same 
+
 		// Check if we pressed anything
 		if(movement.magnitude > 0)
 		{
@@ -56,12 +52,10 @@ public class PlayerBehaviour : MonoBehaviour {
 			// Otherwise, move in the direction we were going
 			this.transform.Translate(lastMovement * Time.deltaTime *
 				currentSpeed, Space.World);
-
-			// Slow down over time
-			//currentSpeed *= 3f;
 		}
 	}
 
+	//When the player collids with objects in the game +++++++++++++++++++++++++++++
 	private void OnTriggerEnter2D(Collider2D other) {
 
 		if (other.gameObject.CompareTag ("Coin")) {

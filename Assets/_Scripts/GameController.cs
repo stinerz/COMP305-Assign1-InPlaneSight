@@ -13,6 +13,8 @@ public class GameController : MonoBehaviour {
 	private int _scoreValue; 
 	private int _livesValue; 
 
+	public AudioSource Fail_04A; 
+
 
 	//PUBLIC INSTANCE VARIABLES ++++++++++++++++++++++++++++++++++++++++++
 	public int black_birdNum = 2; 
@@ -65,7 +67,7 @@ public class GameController : MonoBehaviour {
 		this.GameOverLabel.gameObject.SetActive (false);
 		this.FinalScoreLabel.gameObject.SetActive (false);
 		this.RestartButton.gameObject.SetActive (false);
-
+		this.Fail_04A = this.GetComponent<AudioSource> (); 
 		for (int birdCount= 0; birdCount < this.black_birdNum; birdCount++) {
 			Instantiate (this.black_bird);
 		}
@@ -80,15 +82,18 @@ public class GameController : MonoBehaviour {
 	void Update () {
 	
 	}
-		
+
+	//Method for when the game is over
 	private void _gameOver(){
 		this.GameOverLabel.gameObject.SetActive (true); 
+		//Final score will display once player dies 
 		this.FinalScoreLabel.text = "FINAL SCORE: " + this.ScoreValue; 
 		this.FinalScoreLabel.gameObject.SetActive (true); 
 		this.RestartButton.gameObject.SetActive (true); 
 		this.ScoreLabel.gameObject.SetActive (false); 
 		this.LivesLabel.gameObject.SetActive (false); 
 		this.LivesLabel.gameObject.SetActive (false); 
+		this.Fail_04A.Play (); 
 		this.plane.SetActive (false); 
 		this.coin.SetActive (false); 
 	}

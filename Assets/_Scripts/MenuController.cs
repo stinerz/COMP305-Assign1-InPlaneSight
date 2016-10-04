@@ -14,8 +14,8 @@ public class MenuController : MonoBehaviour {
 	
 	}
 
-
+	//Load scene when start button is clicked
 	public void StartButton_Click() {
-		SceneManager.LoadScene ("Game");
+		SceneManager.LoadScene ("Main");
 	}
 }
