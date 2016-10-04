@@ -20,7 +20,7 @@ public class PlayerBehaviour : MonoBehaviour {
 	//PUBLIC INSTANCE VARIABLES  +++++++++++++++++++++++++++++
 	public GameController gameController; 
 	public AudioSource Pickup_Coin3; 
-	public AudioSource Hit_Hurt8; 
+	public AudioSource Bird_Chirp; 
 
 	// Use this for initialization
 	void Start () {
@@ -69,7 +69,7 @@ public class PlayerBehaviour : MonoBehaviour {
 		}		
 
 		if (other.gameObject.CompareTag ("Bird")) {
-			this.Hit_Hurt8.Play ();
+			this.Bird_Chirp.Play ();
 			this.gameController.LivesValue -= 1;
 		}
 
